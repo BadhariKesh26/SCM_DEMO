@@ -1,0 +1,14 @@
+version: 2.1
+jobs:
+  run-python-tests:
+    docker:
+      - image: cimg/python:3.10
+    steps:
+      - checkout
+      - run:
+          name: Automated Program Execution
+          command: python math_test.py
+workflows:
+  classroom-workflow:
+    jobs:
+      - run-python-tests
